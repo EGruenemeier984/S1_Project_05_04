@@ -8,7 +8,7 @@ function openNav() {
     if (mobileNav.matches) {
         document.getElementById("leftnav").style.width = "100%";
         document.getElementById("main").style.marginLeft = "100%";
-        document.getElementsByClassName("topnav").style.display = "none";
+        document.getElementsByClassName("topnav").style.visibility = "hidden";
     } else {
         document.getElementById("leftnav").style.width = "250px";
         document.getElementById("main").style.marginLeft = "250px";
@@ -41,3 +41,18 @@ function topFunction() {
 // variable for the mobile nav when the users on mobile then creates listener to the open nav function.
 var mobileNav = window.matchMedia("(max-width: 600px)");
 mobileNav.addListener(openNav);
+
+window.onscroll = function () {
+    stickyFunction()
+}
+
+var navbar = document.getElementById("topnav");
+var sticky = navbar.offsetTop;
+
+function stickyFunction() {
+    if (window.pageYOffset <= sticky) {
+        navbar.classList.remove("sticky");
+    } else if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    }
+}
