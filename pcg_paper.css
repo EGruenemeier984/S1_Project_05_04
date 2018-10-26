@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 4
+
+   Park City Gazette Style Sheet
+   Author: Ethan Gruenemeier
+   Date: 10.25.18
+
+   Filename:  pcg_paper.css
+   Supporting Files: 
+
+*/
+html{
+    background-color: #412B2C;
+}
+
+body{
+    background-color: #412B2C;
+    max-width: 1100px;
+    min-width: 700px;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    font-family: 'K2D', sans-serif;
+}
+
+.topnav {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(8, .25fr);
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #D6C8AB;
+}
+ul.topnav li {
+    float: left;
+}
+ul.topnav li a {
+    display: block;
+    color: #111;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul.topnav li.right {
+    float: right;
+}
+ul.topnav li.right {
+    float: right;
+}
+ul.topnav li a:hover:not(.active) {
+    background-color: rgb(150, 133, 117);
+}
+ul.topnav li.right {
+    float: right;
+}
+
+#leftnav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #81613B;
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s;
+}
+
+/* This affects the links in the leftnav and makes the padding 10px on top and 0 right and 6 on the bottom also makes it 16px on the left. */
+#leftnav a {
+    padding: 10px 0px 6px 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #111;
+    display: block;
+    transition: 0.3s;
+}
+
+/* This affect the unordered lists in the id leftnav and makes the bullets disapear. */
+#leftnav ul {
+    list-style-type: none;
+}
+
+/* This affects the links that are hovered over in the leftnav and makes the color a white hex value. */
+#leftnav a:hover {
+    color: #f1f1f1;
+}
+
+/* Affects the closebutton in the left nav and makes the position absolute so it can't be pushed of the screen. Top is set to 0 and the
+font-size is how big the button appears. */
+#leftnav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 2em;
+    margin-left: 45px;
+}
+
+#main {
+    transition: .5s;
+    padding: 20px;
+}
+
+#navButton {
+    background: url(Three\ Lines\ .png) no-repeat;
+    width: 34px;
+    height: 34px;
+    position: fixed;
+    display: none;
+    border: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .topnav{
+        display: none;
+    }
+
+    #navButton{
+        display: block;
+    }
+}
+
