@@ -23,6 +23,7 @@ function closeNav() {
 // sets the function to listen when the user scrolls down 
 window.onscroll = function () {
     scrollFunction()
+    stickyFunction()
 };
 // When the user scroll down and they are 20 pixels down then the button appears to go to the top.
 function scrollFunction() {
@@ -41,10 +42,6 @@ function topFunction() {
 // variable for the mobile nav when the users on mobile then creates listener to the open nav function.
 var mobileNav = window.matchMedia("(max-width: 600px)");
 mobileNav.addListener(openNav);
-// scroll function for stickynav bar function
-window.onscroll = function () {
-    stickyFunction()
-}
 // These are the variables for the topnav and the offset of the top nav bar as it relates to the screen
 var navbar = document.getElementById("topnav");
 var sticky = navbar.offsetTop;
@@ -56,24 +53,3 @@ function stickyFunction() {
         navbar.classList.add("sticky")
     }
 }
-
-// $("header").hide();
-
-// $("html").mousemove(function (event) {
-//     $("header").show();
-
-//     StopFunction();
-//     StartFunction();
-// });
-
-// function StartFunction() {
-//     hideVar = setTimeout(function () {
-//         $("header").hide();
-//     }, 1000);
-// }
-
-// function StopFunction() {
-//     if (typeof hideVar != 'undefined') {
-//         clearTimeout(hideVar);
-//     }
-// }
